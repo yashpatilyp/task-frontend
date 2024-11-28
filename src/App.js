@@ -1,23 +1,45 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UserProvider } from './userContext';
 import './App.css';
+import Header from './components/Header';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
+import List from './pages/List';
+import AddProduct from './pages/AddProduct';
+import ViewProducts from './pages/ViewProducts';
+
+
+
 
 function App() {
+  const token = localStorage.getItem('token');
+console.log(token)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+      <UserProvider>
+        
+        <Router>
+          {/* Header is constant on all pages */}
+          <Header />
+          <Routes>
+            {/* Define your routes here */}
+            
+            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/list" element={<List />} />
+            <Route path="/add-product" element={<AddProduct />} />
+            <Route path="/products" element={<ViewProducts />} />
+          </Routes>
+        </Router>
+        <ToastContainer />
+      </UserProvider>
     </div>
   );
 }
