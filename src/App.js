@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import List from './pages/List';
+
 import AddProduct from './pages/AddProduct';
 import ViewProducts from './pages/ViewProducts';
 
@@ -25,15 +25,15 @@ console.log(token)
       <UserProvider>
         
         <Router>
-          {/* Header is constant on all pages */}
+        
           <Header />
           <Routes>
-            {/* Define your routes here */}
+            
             
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/list" element={<List />} />
+            
             <Route path="/add-product" element={<AddProduct />} />
             <Route path="/products" element={<ViewProducts />} />
           </Routes>

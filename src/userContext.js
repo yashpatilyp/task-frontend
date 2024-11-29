@@ -5,14 +5,14 @@ import { toast } from 'react-toastify';
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  // Safely parse localStorage data
+  
   const getUserFromLocalStorage = () => {
     try {
       const storedUser = localStorage.getItem('user');
       return storedUser ? JSON.parse(storedUser) : null;
     } catch (error) {
       console.error("Error parsing user from localStorage:", error);
-      return null; // Return null if parsing fails
+      return null; 
     }
   };
 
@@ -29,13 +29,13 @@ export const UserProvider = ({ children }) => {
   };
 
   const logout = () => {
-    // Clear user and addresses
+   
     setUser(null);
 
     localStorage.removeItem('user');
     localStorage.removeItem('token');
 
-    // Show a success toast
+   
     toast.success("User logged out successfully", {
       position: "top-center",
       autoClose: 2000,

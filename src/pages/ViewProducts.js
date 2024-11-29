@@ -12,7 +12,7 @@ const ViewProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const userId = user._id; // Get userId from context
+        const userId = user._id; 
         const response = await axios.get(
           `http://localhost:5001/api/v2/product/products/${userId}`
         );

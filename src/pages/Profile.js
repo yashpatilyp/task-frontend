@@ -4,7 +4,7 @@ import { useUser } from '../userContext';
 const Profile = () => {
   const { user } = useUser();
 
-  // If no user object in context, retrieve it from localStorage
+ 
   const storedUser = localStorage.getItem('user');
   const userInfo = user || (storedUser ? JSON.parse(storedUser) : null);
 

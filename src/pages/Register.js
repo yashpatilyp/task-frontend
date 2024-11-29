@@ -20,7 +20,7 @@ const Register = () => {
               
             },
             onSubmit: async (values) => {
-              setLoading(true);  // Start loading
+              setLoading(true);  
               try {
                 const response = await axios.post('http://localhost:5001/api/v1/user/signup', {
                   name: values.name,
@@ -45,7 +45,7 @@ const Register = () => {
                   progress: undefined,
                 });
                 navigate("/add-product")
-                formik.resetForm(); // Reset the form
+                formik.resetForm(); 
               } catch (error) {
                 if (error.response && error.response.data) {
                   console.log(error.response.data.message);
@@ -63,7 +63,7 @@ const Register = () => {
                   console.log('An unexpected error occurred. Please try again later.');
                 }
               } finally {
-                setLoading(false);  // Stop loading
+                setLoading(false); 
               }
             },
           });

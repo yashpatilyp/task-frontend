@@ -6,7 +6,7 @@ const Header = () => {
   const { user, logout } = useUser();
   const navigate = useNavigate();
 
-  // Navigate to the profile page
+ 
   const navigateToProfile = () => {
     navigate('/profile');
   };
@@ -34,7 +34,7 @@ const Header = () => {
         </a>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <div className="d-flex justify-content-center w-100 align-items-center">
-            {/* Links for Add Product and View Product when user is logged in */}
+          
             {user && (
               <ul className="navbar-nav mx-4">
                 <li className="nav-item">
@@ -51,7 +51,7 @@ const Header = () => {
             )}
           </div>
           <div className="d-flex ms-auto align-items-center">
-            {/* Conditionally render based on user login state */}
+          
             {user ? (
               <>
                 <span
@@ -64,7 +64,7 @@ const Header = () => {
                 <button
                   onClick={() => {
                     logout();
-                    navigate('/'); // Redirect to the login page after logout
+                    navigate('/'); 
                   }}
                   className="btn btn-danger btn-sm"
                 >
